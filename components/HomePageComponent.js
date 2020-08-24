@@ -7,6 +7,7 @@ import {
   ScrollView,
   TextInput,
   Image,
+  ImageBackground,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import colors from "../config/colors";
@@ -14,230 +15,241 @@ import { Feather, FontAwesome, Ionicons, AntDesign } from "@expo/vector-icons";
 
 export default function HomePageComponent() {
   return (
-    <View style={styles.container}>
-      <View style={styles.homepage__main}>
-        <View style={styles.homepage__appbar}>
-          <View style={styles.homepage__appbar__settings}>
-            <Text style={styles.homepage__appbar__welcome}>
-              Ola,{" "}
-              <Text style={styles.homepage__appbar__welcome__name}>
-                Nikish Ryazanov
+    <ImageBackground
+      style={styles.background}
+      source={require("../assets/MainBackground.png")}
+    >
+      <View style={styles.container}>
+        <View style={styles.homepage__main}>
+          <View style={styles.homepage__appbar}>
+            <View style={styles.homepage__appbar__settings}>
+              <Text style={styles.homepage__appbar__welcome}>
+                Ola,{" "}
+                <Text style={styles.homepage__appbar__welcome__name}>
+                  Nikish Ryazanov
+                </Text>
               </Text>
+              <TouchableOpacity>
+                <Feather name="settings" size={24} color="white" />
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.homepage__appbar__question}>
+              What are you going to learn today?
             </Text>
-            <TouchableOpacity>
-              <Feather name="settings" size={24} color="white" />
-            </TouchableOpacity>
           </View>
-          <Text style={styles.homepage__appbar__question}>
-            What are you going to learn today?
-          </Text>
+          <View style={styles.homepage__search}>
+            <FontAwesome name="search" size={20} color="white" />
+            <TextInput
+              placeholder="Look for planets, asteroids, stars..."
+              placeholderTextColor={colors.white}
+              style={{ marginLeft: 16 }}
+            />
+          </View>
         </View>
-        <View style={styles.homepage__search}>
-          <FontAwesome name="search" size={20} color="white" />
-          <TextInput
-            placeholder="Look for planets, asteroids, stars..."
-            placeholderTextColor={colors.white}
-            style={{ marginLeft: 16 }}
-          />
-        </View>
+        <ScrollView style={{ overflow: "hidden" }}>
+          <View style={styles.homepage__categories}>
+            <Text style={styles.homepage__categories__title}>Categories</Text>
+            <View style={styles.homepage__categories__blocks}>
+              <LinearGradient
+                colors={["#5935FF", "#47408E"]}
+                style={styles.homepage__categories__block}
+              >
+                <Ionicons name="md-planet" size={32} color="white" />
+                <Text style={styles.homepage__categories__block__name}>
+                  Planets
+                </Text>
+              </LinearGradient>
+              <LinearGradient
+                colors={["#FF6CD9", "#FF2184"]}
+                style={styles.homepage__categories__block}
+              >
+                <Ionicons name="md-planet" size={32} color="white" />
+                <Text style={styles.homepage__categories__block__name}>
+                  Asteroids
+                </Text>
+              </LinearGradient>
+              <LinearGradient
+                colors={["#01D4E4", "#009DE0"]}
+                style={styles.homepage__categories__block}
+              >
+                <AntDesign name="star" size={32} color="white" />
+                <Text style={styles.homepage__categories__block__name}>
+                  Stars
+                </Text>
+              </LinearGradient>
+              <LinearGradient
+                colors={["#F9C270", "#FFAA2B"]}
+                style={styles.homepage__categories__block}
+              >
+                <Ionicons name="md-planet" size={32} color="white" />
+                <Text style={styles.homepage__categories__block__name}>
+                  Galaxies
+                </Text>
+              </LinearGradient>
+            </View>
+          </View>
+          <View style={styles.homepage__planets}>
+            <Text style={styles.homepage__planets__title}>Planets</Text>
+            <ScrollView
+              horizontal={true}
+              style={styles.homepage__planets__blocks}
+            >
+              <TouchableOpacity>
+                <View style={styles.homepage__planets__block}>
+                  <Image
+                    source={require("../assets/Planets/Sun.png")}
+                    style={styles.homepage__planets__block__image}
+                  />
+                  <View style={styles.homepage__planets__block__nav}>
+                    <Text style={styles.homepage__planets__block__text}>
+                      Sun
+                    </Text>
+                    <AntDesign name="arrowright" size={24} color="#EF5F53" />
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.homepage__planets__block}>
+                  <Image
+                    source={require("../assets/Planets/Mercury.png")}
+                    style={styles.homepage__planets__block__image}
+                  />
+                  <View style={styles.homepage__planets__block__nav}>
+                    <Text style={styles.homepage__planets__block__text}>
+                      Mercury
+                    </Text>
+                    <AntDesign name="arrowright" size={24} color="#EF5F53" />
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.homepage__planets__block}>
+                  <Image
+                    source={require("../assets/Planets/Venus.png")}
+                    style={styles.homepage__planets__block__image}
+                  />
+                  <View style={styles.homepage__planets__block__nav}>
+                    <Text style={styles.homepage__planets__block__text}>
+                      Venus
+                    </Text>
+                    <AntDesign name="arrowright" size={24} color="#EF5F53" />
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.homepage__planets__block}>
+                  <Image
+                    source={require("../assets/Planets/Earth.png")}
+                    style={styles.homepage__planets__block__image}
+                  />
+                  <View style={styles.homepage__planets__block__nav}>
+                    <Text style={styles.homepage__planets__block__text}>
+                      Earth
+                    </Text>
+                    <AntDesign name="arrowright" size={24} color="#EF5F53" />
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.homepage__planets__block}>
+                  <Image
+                    source={require("../assets/Planets/Mars.png")}
+                    style={styles.homepage__planets__block__image}
+                  />
+                  <View style={styles.homepage__planets__block__nav}>
+                    <Text style={styles.homepage__planets__block__text}>
+                      Mars
+                    </Text>
+                    <AntDesign name="arrowright" size={24} color="#EF5F53" />
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.homepage__planets__block}>
+                  <Image
+                    source={require("../assets/Planets/Jupiter.png")}
+                    style={styles.homepage__planets__block__image}
+                  />
+                  <View style={styles.homepage__planets__block__nav}>
+                    <Text style={styles.homepage__planets__block__text}>
+                      Jupiter
+                    </Text>
+                    <AntDesign name="arrowright" size={24} color="#EF5F53" />
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.homepage__planets__block}>
+                  <Image
+                    source={require("../assets/Planets/Saturn.png")}
+                    style={styles.homepage__planets__block__image}
+                  />
+                  <View style={styles.homepage__planets__block__nav}>
+                    <Text style={styles.homepage__planets__block__text}>
+                      Saturn
+                    </Text>
+                    <AntDesign name="arrowright" size={24} color="#EF5F53" />
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.homepage__planets__block}>
+                  <Image
+                    source={require("../assets/Planets/Uranus.png")}
+                    style={styles.homepage__planets__block__image}
+                  />
+                  <View style={styles.homepage__planets__block__nav}>
+                    <Text style={styles.homepage__planets__block__text}>
+                      Uranus
+                    </Text>
+                    <AntDesign name="arrowright" size={24} color="#EF5F53" />
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.homepage__planets__block}>
+                  <Image
+                    source={require("../assets/Planets/Neptune.png")}
+                    style={styles.homepage__planets__block__image}
+                  />
+                  <View style={styles.homepage__planets__block__nav}>
+                    <Text style={styles.homepage__planets__block__text}>
+                      Neptune
+                    </Text>
+                    <AntDesign name="arrowright" size={24} color="#EF5F53" />
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.homepage__planets__block}>
+                  <Image
+                    source={require("../assets/Planets/Pluto.png")}
+                    style={styles.homepage__planets__block__image}
+                  />
+                  <View style={styles.homepage__planets__block__nav}>
+                    <Text style={styles.homepage__planets__block__text}>
+                      Pluto
+                    </Text>
+                    <AntDesign name="arrowright" size={24} color="#EF5F53" />
+                  </View>
+                </View>
+              </TouchableOpacity>
+            </ScrollView>
+          </View>
+        </ScrollView>
       </View>
-      <ScrollView style={{ overflow: "hidden" }}>
-        <View style={styles.homepage__categories}>
-          <Text style={styles.homepage__categories__title}>Categories</Text>
-          <View style={styles.homepage__categories__blocks}>
-            <LinearGradient
-              colors={["#5935FF", "#47408E"]}
-              style={styles.homepage__categories__block}
-            >
-              <Ionicons name="md-planet" size={32} color="white" />
-              <Text style={styles.homepage__categories__block__name}>
-                Planets
-              </Text>
-            </LinearGradient>
-            <LinearGradient
-              colors={["#FF6CD9", "#FF2184"]}
-              style={styles.homepage__categories__block}
-            >
-              <Ionicons name="md-planet" size={32} color="white" />
-              <Text style={styles.homepage__categories__block__name}>
-                Asteroids
-              </Text>
-            </LinearGradient>
-            <LinearGradient
-              colors={["#01D4E4", "#009DE0"]}
-              style={styles.homepage__categories__block}
-            >
-              <AntDesign name="star" size={32} color="white" />
-              <Text style={styles.homepage__categories__block__name}>
-                Stars
-              </Text>
-            </LinearGradient>
-            <LinearGradient
-              colors={["#F9C270", "#FFAA2B"]}
-              style={styles.homepage__categories__block}
-            >
-              <Ionicons name="md-planet" size={32} color="white" />
-              <Text style={styles.homepage__categories__block__name}>
-                Galaxies
-              </Text>
-            </LinearGradient>
-          </View>
-        </View>
-        <View style={styles.homepage__planets}>
-          <Text style={styles.homepage__planets__title}>Planets</Text>
-          <ScrollView
-            horizontal={true}
-            style={styles.homepage__planets__blocks}
-          >
-            <TouchableOpacity>
-              <View style={styles.homepage__planets__block}>
-                <Image
-                  source={require("../assets/Planets/Sun.png")}
-                  style={styles.homepage__planets__block__image}
-                />
-                <View style={styles.homepage__planets__block__nav}>
-                  <Text style={styles.homepage__planets__block__text}>Sun</Text>
-                  <AntDesign name="arrowright" size={24} color="#EF5F53" />
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.homepage__planets__block}>
-                <Image
-                  source={require("../assets/Planets/Mercury.png")}
-                  style={styles.homepage__planets__block__image}
-                />
-                <View style={styles.homepage__planets__block__nav}>
-                  <Text style={styles.homepage__planets__block__text}>
-                    Mercury
-                  </Text>
-                  <AntDesign name="arrowright" size={24} color="#EF5F53" />
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.homepage__planets__block}>
-                <Image
-                  source={require("../assets/Planets/Venus.png")}
-                  style={styles.homepage__planets__block__image}
-                />
-                <View style={styles.homepage__planets__block__nav}>
-                  <Text style={styles.homepage__planets__block__text}>
-                    Venus
-                  </Text>
-                  <AntDesign name="arrowright" size={24} color="#EF5F53" />
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.homepage__planets__block}>
-                <Image
-                  source={require("../assets/Planets/Earth.png")}
-                  style={styles.homepage__planets__block__image}
-                />
-                <View style={styles.homepage__planets__block__nav}>
-                  <Text style={styles.homepage__planets__block__text}>
-                    Earth
-                  </Text>
-                  <AntDesign name="arrowright" size={24} color="#EF5F53" />
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.homepage__planets__block}>
-                <Image
-                  source={require("../assets/Planets/Mars.png")}
-                  style={styles.homepage__planets__block__image}
-                />
-                <View style={styles.homepage__planets__block__nav}>
-                  <Text style={styles.homepage__planets__block__text}>
-                    Mars
-                  </Text>
-                  <AntDesign name="arrowright" size={24} color="#EF5F53" />
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.homepage__planets__block}>
-                <Image
-                  source={require("../assets/Planets/Jupiter.png")}
-                  style={styles.homepage__planets__block__image}
-                />
-                <View style={styles.homepage__planets__block__nav}>
-                  <Text style={styles.homepage__planets__block__text}>
-                    Jupiter
-                  </Text>
-                  <AntDesign name="arrowright" size={24} color="#EF5F53" />
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.homepage__planets__block}>
-                <Image
-                  source={require("../assets/Planets/Saturn.png")}
-                  style={styles.homepage__planets__block__image}
-                />
-                <View style={styles.homepage__planets__block__nav}>
-                  <Text style={styles.homepage__planets__block__text}>
-                    Saturn
-                  </Text>
-                  <AntDesign name="arrowright" size={24} color="#EF5F53" />
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.homepage__planets__block}>
-                <Image
-                  source={require("../assets/Planets/Uranus.png")}
-                  style={styles.homepage__planets__block__image}
-                />
-                <View style={styles.homepage__planets__block__nav}>
-                  <Text style={styles.homepage__planets__block__text}>
-                    Uranus
-                  </Text>
-                  <AntDesign name="arrowright" size={24} color="#EF5F53" />
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.homepage__planets__block}>
-                <Image
-                  source={require("../assets/Planets/Neptune.png")}
-                  style={styles.homepage__planets__block__image}
-                />
-                <View style={styles.homepage__planets__block__nav}>
-                  <Text style={styles.homepage__planets__block__text}>
-                    Neptune
-                  </Text>
-                  <AntDesign name="arrowright" size={24} color="#EF5F53" />
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.homepage__planets__block}>
-                <Image
-                  source={require("../assets/Planets/Pluto.png")}
-                  style={styles.homepage__planets__block__image}
-                />
-                <View style={styles.homepage__planets__block__nav}>
-                  <Text style={styles.homepage__planets__block__text}>
-                    Pluto
-                  </Text>
-                  <AntDesign name="arrowright" size={24} color="#EF5F53" />
-                </View>
-              </View>
-            </TouchableOpacity>
-          </ScrollView>
-        </View>
-      </ScrollView>
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    resizeMode: "cover",
+    backgroundColor: colors.background,
+  },
   container: {
     fontFamily: "Roboto",
-    flex: 1,
     height: "100%",
   },
   homepage__main: {
