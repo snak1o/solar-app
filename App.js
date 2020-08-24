@@ -1,20 +1,38 @@
 import React from "react";
 import { StyleSheet, View, StatusBar, ImageBackground } from "react-native";
-import WelcomeComponent from "./components/WelcomeComponent";
-import colors from "./config/colors";
-import HomePageComponent from "./components/HomePageComponent";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+
+// ИМПОРТ КОМПОНЕНТОВ
+import WelcomeComponent from "./src/components/WelcomeComponent";
+import HomePageComponent from "./src/components/HomePageComponent";
+
+// ИМПОРТ КОНФИГ ФАЙЛОВ
+import colors from "./src/config/colors";
+
+const initialState = {
+  counter: 0,
+};
+
+const reducer = (state = initialState) => {
+  return state;
+};
+
+const store = createStore(reducer);
 
 export default function App() {
   StatusBar.setBarStyle("light-content");
   return (
-    <ImageBackground
-      source={require("./assets/MainBackground.png")}
-      style={styles.background}
-    >
-      <View style={styles.container}>
-        <HomePageComponent />
-      </View>
-    </ImageBackground>
+    <Provider store={store}>
+      <ImageBackground
+        source={require("./assets/MainBackground.png")}
+        style={styles.background}
+      >
+        <View style={styles.container}>
+          <HomePageComponent />
+        </View>
+      </ImageBackground>
+    </Provider>
   );
 }
 

@@ -17,7 +17,7 @@ export default function WelcomeComponent() {
   return (
     <ImageBackground
       style={styles.background}
-      source={require("../assets/Background.png")}
+      source={require("../../assets/Background.png")}
     >
       <View style={styles.welcome__screen}>
         <View style={styles.welcome__screen__titles}>

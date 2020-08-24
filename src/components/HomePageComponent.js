@@ -92,7 +92,7 @@ export default function HomePageComponent() {
             <TouchableOpacity>
               <View style={styles.homepage__planets__block}>
                 <Image
-                  source={require("../assets/Planets/Sun.png")}
+                  source={require("../../assets/Planets/Sun.png")}
                   style={styles.homepage__planets__block__image}
                 />
                 <View style={styles.homepage__planets__block__nav}>
@@ -104,7 +104,7 @@ export default function HomePageComponent() {
             <TouchableOpacity>
               <View style={styles.homepage__planets__block}>
                 <Image
-                  source={require("../assets/Planets/Mercury.png")}
+                  source={require("../../assets/Planets/Mercury.png")}
                   style={styles.homepage__planets__block__image}
                 />
                 <View style={styles.homepage__planets__block__nav}>
@@ -118,7 +118,7 @@ export default function HomePageComponent() {
             <TouchableOpacity>
               <View style={styles.homepage__planets__block}>
                 <Image
-                  source={require("../assets/Planets/Venus.png")}
+                  source={require("../../assets/Planets/Venus.png")}
                   style={styles.homepage__planets__block__image}
                 />
                 <View style={styles.homepage__planets__block__nav}>
@@ -132,7 +132,7 @@ export default function HomePageComponent() {
             <TouchableOpacity>
               <View style={styles.homepage__planets__block}>
                 <Image
-                  source={require("../assets/Planets/Earth.png")}
+                  source={require("../../assets/Planets/Earth.png")}
                   style={styles.homepage__planets__block__image}
                 />
                 <View style={styles.homepage__planets__block__nav}>
@@ -146,7 +146,7 @@ export default function HomePageComponent() {
             <TouchableOpacity>
               <View style={styles.homepage__planets__block}>
                 <Image
-                  source={require("../assets/Planets/Mars.png")}
+                  source={require("../../assets/Planets/Mars.png")}
                   style={styles.homepage__planets__block__image}
                 />
                 <View style={styles.homepage__planets__block__nav}>
@@ -160,7 +160,7 @@ export default function HomePageComponent() {
             <TouchableOpacity>
               <View style={styles.homepage__planets__block}>
                 <Image
-                  source={require("../assets/Planets/Jupiter.png")}
+                  source={require("../../assets/Planets/Jupiter.png")}
                   style={styles.homepage__planets__block__image}
                 />
                 <View style={styles.homepage__planets__block__nav}>
@@ -174,7 +174,7 @@ export default function HomePageComponent() {
             <TouchableOpacity>
               <View style={styles.homepage__planets__block}>
                 <Image
-                  source={require("../assets/Planets/Saturn.png")}
+                  source={require("../../assets/Planets/Saturn.png")}
                   style={styles.homepage__planets__block__image}
                 />
                 <View style={styles.homepage__planets__block__nav}>
@@ -188,7 +188,7 @@ export default function HomePageComponent() {
             <TouchableOpacity>
               <View style={styles.homepage__planets__block}>
                 <Image
-                  source={require("../assets/Planets/Uranus.png")}
+                  source={require("../../assets/Planets/Uranus.png")}
                   style={styles.homepage__planets__block__image}
                 />
                 <View style={styles.homepage__planets__block__nav}>
@@ -202,7 +202,7 @@ export default function HomePageComponent() {
             <TouchableOpacity>
               <View style={styles.homepage__planets__block}>
                 <Image
-                  source={require("../assets/Planets/Neptune.png")}
+                  source={require("../../assets/Planets/Neptune.png")}
                   style={styles.homepage__planets__block__image}
                 />
                 <View style={styles.homepage__planets__block__nav}>
@@ -216,7 +216,7 @@ export default function HomePageComponent() {
             <TouchableOpacity>
               <View style={styles.homepage__planets__block}>
                 <Image
-                  source={require("../assets/Planets/Pluto.png")}
+                  source={require("../../assets/Planets/Pluto.png")}
                   style={styles.homepage__planets__block__image}
                 />
                 <View style={styles.homepage__planets__block__nav}>
