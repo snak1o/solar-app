@@ -37,7 +37,7 @@ export default function HomePageComponent() {
           <TextInput
             placeholder="Look for planets, asteroids, stars..."
             placeholderTextColor={colors.white}
-            style={{ marginLeft: 16 }}
+            style={{ marginLeft: 16, color: colors.white }}
           />
         </View>
       </View>
@@ -277,10 +277,11 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 50,
     paddingLeft: 20,
-    marginBottom: 50,
+    marginBottom: 15,
   },
   // Элемент выбора категорий
   homepage__categories: {
+    marginTop: 35,
     marginBottom: 50,
     paddingLeft: 16,
     paddingRight: 16,
