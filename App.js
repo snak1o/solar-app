@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
-import { StyleSheet, View, StatusBar, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  View,
+  StatusBar,
+  ImageBackground,
+  ActivityIndicator,
+} from "react-native";
 
 // REDUX
 import store from "./src/store/index";
 import { Provider } from "react-redux";
-// COMPONENTS
-import WelcomeComponent from "./src/components/WelcomeComponent";
-import HomePageComponent from "./src/components/HomePageComponent";
 
 // CONFIG
 import colors from "./src/config/colors";

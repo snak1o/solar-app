@@ -7,6 +7,7 @@ import {
   ScrollView,
   TextInput,
   ImageBackground,
+  ActivityIndicator,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -24,6 +25,14 @@ function HomePageComponent() {
   const loading = useSelector((state) => state.loader.loading);
 
   const planets = useSelector((state) => state.planets.planets[0]);
+
+  const Test = () => {
+    if (loading) return <ActivityIndicator />;
+
+    return planets.map((planet) => (
+      <PlanetComponent planet={planet} key={Math.random()} />
+    ));
+  };
 
   return (
     <ImageBackground
@@ -53,7 +62,7 @@ function HomePageComponent() {
             <TextInput
               placeholder="Look for planets, asteroids, stars..."
               placeholderTextColor={colors.white}
-              style={{ marginLeft: 16 }}
+              style={{ marginLeft: 16, color: colors.white }}
             />
           </View>
         </View>
@@ -105,14 +114,7 @@ function HomePageComponent() {
               horizontal={true}
               style={styles.homepage__planets__blocks}
             >
-              <PlanetComponent />
-              <PlanetComponent />
-              <PlanetComponent />
-              <PlanetComponent />
-              <PlanetComponent />
-              <PlanetComponent />
-              <PlanetComponent />
-              <PlanetComponent />
+              <Test />
             </ScrollView>
           </View>
         </ScrollView>
