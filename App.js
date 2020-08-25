@@ -14,6 +14,11 @@ import colors from "./src/config/colors";
 // ACTION
 import { getPlanets } from "./src/actions/planetsActions";
 
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import NavigationComponent from "./components/NavigationComponent";
+import { NavigationContainer } from "@react-navigation/native";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+
 export default function App() {
   StatusBar.setBarStyle("light-content");
 
