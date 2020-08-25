@@ -13,6 +13,7 @@ import colors from "./src/config/colors";
 
 // ACTION
 import { getPlanets } from "./src/actions/planetsActions";
+import NavigationComponent from "./src/components/NavigationComponent";
 
 export default function App() {
   StatusBar.setBarStyle("light-content");
@@ -28,7 +29,7 @@ export default function App() {
         style={styles.background}
       >
         <View style={styles.container}>
-          <HomePageComponent />
+          <NavigationComponent />
         </View>
       </ImageBackground>
     </Provider>

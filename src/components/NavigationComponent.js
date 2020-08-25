@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import colors from "../config/colors";
 import HomePageComponent from "./HomePageComponent";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
