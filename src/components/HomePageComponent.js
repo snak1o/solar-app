@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,17 +9,28 @@ import {
   Image,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+
+// CONFIG
 import colors from "../config/colors";
+
+// ICONS
 import { Feather, FontAwesome, Ionicons, AntDesign } from "@expo/vector-icons";
 
-export default function HomePageComponent() {
+// REDUX
+import { useSelector, useDispatch } from "react-redux";
+
+function HomePageComponent() {
+  const loading = useSelector((state) => state.loader.loading);
+
+  const planets = useSelector((state) => state.planets.planets[0]);
+
   return (
     <View style={styles.container}>
       <View style={styles.homepage__main}>
         <View style={styles.homepage__appbar}>
           <View style={styles.homepage__appbar__settings}>
             <Text style={styles.homepage__appbar__welcome}>
-              Ola,{" "}
+              Ola,
               <Text style={styles.homepage__appbar__welcome__name}>
                 Nikish Ryazanov
               </Text>
@@ -233,6 +244,8 @@ export default function HomePageComponent() {
     </View>
   );
 }
+
+export default HomePageComponent;
 
 const styles = StyleSheet.create({
   container: {

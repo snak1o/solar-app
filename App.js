@@ -1,27 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, View, StatusBar, ImageBackground } from "react-native";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
 
-// ИМПОРТ КОМПОНЕНТОВ
+// REDUX
+import store from "./src/store/index";
+import { Provider } from "react-redux";
+// COMPONENTS
 import WelcomeComponent from "./src/components/WelcomeComponent";
 import HomePageComponent from "./src/components/HomePageComponent";
 
-// ИМПОРТ КОНФИГ ФАЙЛОВ
+// CONFIG
 import colors from "./src/config/colors";
 
-const initialState = {
-  counter: 0,
-};
-
-const reducer = (state = initialState) => {
-  return state;
-};
-
-const store = createStore(reducer);
+// ACTION
+import { getPlanets } from "./src/actions/planetsActions";
 
 export default function App() {
   StatusBar.setBarStyle("light-content");
+
+  useEffect(() => {
+    store.dispatch(getPlanets());
+  }, []);
+
   return (
     <Provider store={store}>
       <ImageBackground
