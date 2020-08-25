@@ -8,7 +8,6 @@ export const getPlanets = () => {
     try {
       dispatch(showLoader());
       const response = await axios.get("http://" + ip + "/api/planets");
-      console.log(response.data);
       dispatch(setPlanets(response.data));
       dispatch(hideLoader());
     } catch (error) {

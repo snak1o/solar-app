@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import colors from "../config/colors";
-import HomePageComponent from "./HomePageComponent";
+import HomeScreen from "../Screens/HomeScreen";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { Feather, AntDesign } from "@expo/vector-icons";
 import SoonComponent from "./SoonComponent";
@@ -23,7 +23,7 @@ export default function NavigationComponent() {
       >
         <Tab.Screen
           name="HomePage"
-          component={HomePageComponent}
+          component={HomeScreen}
           options={{
             tabBarLabel: "Home",
             tabBarIcon: ({ color }) => (
