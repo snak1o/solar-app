@@ -17,7 +17,7 @@ import colors from "../config/colors";
 import { Feather, FontAwesome, Ionicons, AntDesign } from "@expo/vector-icons";
 
 // REDUX
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function HomePageComponent() {
   const loading = useSelector((state) => state.loader.loading);
