@@ -8,9 +8,9 @@ import ip from "../config/ip";
 // ICONS
 import { AntDesign } from "@expo/vector-icons";
 
-export default function PlanetComponent({ planet }) {
+export default function PlanetComponent({ planet, navigation }) {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
       <View style={styles.homepage__planets__block}>
         <Image
           source={{
