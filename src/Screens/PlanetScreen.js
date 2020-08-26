@@ -1,17 +1,28 @@
+// BASE IMPORT
 import React from "react";
 import { StyleSheet, Image, View, Dimensions } from "react-native";
 
+// REDUX IMPORT
 import { useSelector } from "react-redux";
 
+// IMPORT COMPONENTS
 import PlanetInfoComponent from "../components/PlanetInfoComponent";
 import SettingsButtonComponent from "../components/SettingsButtonComponent";
+
+// CONFIG
 import colors from "../config/colors";
+
+// IMPORT SIMPLE LOADING COMPONENT
 import { ActivityIndicator } from "react-native-paper";
 
+// GET CURRENT SCREEN HEIGHT, WIDTH
 const { height, width } = Dimensions.get("screen");
 
 export default function PlanetScreen() {
+  // GET THE LOADING STATE FROM GLOBAL STATE WITH REDUX
   const loading = useSelector((state) => state.loader.loading);
+
+  // IF LOADING RETURN LOADING COMPONENT
   return loading ? (
     <ActivityIndicator />
   ) : (

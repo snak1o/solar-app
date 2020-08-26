@@ -1,9 +1,11 @@
+// BASE IMPORT
 import React from "react";
 import { StyleSheet, View, ScrollView, ImageBackground } from "react-native";
 
 // CONFIG
 import colors from "../config/colors";
 
+// IMPORT COMPONENTS
 import SearchComponent from "../components/HomeScreenComponents/SearchComponent";
 import CategoriesComponent from "../components/HomeScreenComponents/CategoriesComponent";
 import PlanetsComponent from "../components/HomeScreenComponents/PlanetsComponent";

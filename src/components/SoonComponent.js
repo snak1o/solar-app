@@ -1,5 +1,8 @@
+// BASE IMPORT
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+
+// CONFIG
 import colors from "../config/colors";
 
 export default function SoonComponent() {

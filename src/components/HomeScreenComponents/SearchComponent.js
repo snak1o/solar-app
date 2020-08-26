@@ -1,8 +1,11 @@
+// BASE IMPORT
 import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
+// CONFIG
 import colors from "../../config/colors";
 
+// ICONS
 import { Feather } from "@expo/vector-icons";
 
 export default function SearchComponent() {

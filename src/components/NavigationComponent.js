@@ -1,13 +1,25 @@
+// BASE IMPORT
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import colors from "../config/colors";
-import HomeScreen from "../screens/HomeScreen";
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import { Feather, AntDesign } from "@expo/vector-icons";
-import SoonComponent from "./SoonComponent";
-import PlanetScreen from "../screens/PlanetScreen";
 
+// REACT - NAVIGATION IMPORT
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+
+// CREATE BOTTOM TAB NAVIGATION
 const Tab = createMaterialBottomTabNavigator();
+
+// IMPORT SCREENS
+import PlanetScreen from "../screens/PlanetScreen";
+import HomeScreen from "../screens/HomeScreen";
+
+// IMPORT COMPONENTS
+import SoonComponent from "./SoonComponent";
+
+// CONFIG
+import colors from "../config/colors";
+
+// ICONS
+import { Feather, AntDesign } from "@expo/vector-icons";
 
 export default function NavigationComponent() {
   return (

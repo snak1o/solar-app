@@ -1,3 +1,4 @@
+// BASE IMPORT
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -6,15 +7,22 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
-import colors from "../config/colors";
-import Collapsible from "react-native-collapsible";
-import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native-gesture-handler";
 
+// IMPORT COLLAPSIBLE DROPDOWN
+import Collapsible from "react-native-collapsible";
+
+// ICONS
+import { Feather, Ionicons } from "@expo/vector-icons";
+
+// CONFIG
+import colors from "../config/colors";
+
+// GET CURRENT SCREEN HEIGHT AND WIDTH
 const { height, width } = Dimensions.get("screen");
 
 export default function PlanetInfoComponent() {
+  // STATE FOR SHOW/HIDE COLLAPSIBLE DROPDOWN (for each dropdown we have one state in obj below)
   const [isCollapsed, setIsCollapsed] = useState({
     introduction: true,
     physical: true,
@@ -41,7 +49,7 @@ export default function PlanetInfoComponent() {
           as the "Red Planet" because the iron oxide prevalent on its surface
           gives it a reddish appearance.
         </Text>
-        {/* Интродакшен дропдаун */}
+        {/* INTRODUCTION DROPDOWN */}
         <View style={styles.dropdown}>
           <TouchableOpacity
             style={styles.dropdown__header}
@@ -66,7 +74,7 @@ export default function PlanetInfoComponent() {
             </Text>
           </Collapsible>
         </View>
-        {/* Физикал дропдаун */}
+        {/* PHYSICAL DROPDOWN */}
         <View style={styles.dropdown}>
           <TouchableOpacity
             style={styles.dropdown__header}
@@ -92,7 +100,7 @@ export default function PlanetInfoComponent() {
             </Text>
           </Collapsible>
         </View>
-        {/* Географи дропдаун */}
+        {/* GEO DROPDOWN */}
         <View style={[styles.dropdown, styles.dropdown__geo]}>
           <TouchableOpacity
             style={styles.dropdown__header}

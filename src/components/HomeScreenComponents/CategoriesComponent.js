@@ -1,14 +1,15 @@
+// BASE IMPORT
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-// Градиент
+// CONFIG
+import colors from "../../config/colors";
+
+// GRADIENT LIB IMPORT
 import { LinearGradient } from "expo-linear-gradient";
 
-// Иконки
+// ICONS
 import { Ionicons, AntDesign } from "@expo/vector-icons";
-
-// Config
-import colors from "../../config/colors";
 
 export default function CategoriesComponent() {
   return (

@@ -1,3 +1,4 @@
+// BASE IMPORT
 import React from "react";
 import {
   StyleSheet,
@@ -7,8 +8,14 @@ import {
   Dimensions,
   ImageBackground,
 } from "react-native";
+
+// GRADIENT IMPORT
 import { LinearGradient } from "expo-linear-gradient";
+
+// CONFIG
 import colors from "../config/colors";
+
+// ICONS
 import { AntDesign } from "@expo/vector-icons";
 
 const { height, width } = Dimensions.get("screen");

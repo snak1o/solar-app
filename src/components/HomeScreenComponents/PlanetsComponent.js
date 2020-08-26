@@ -1,3 +1,4 @@
+// BASE IMPORT
 import React from "react";
 import {
   StyleSheet,
@@ -6,20 +7,26 @@ import {
   ScrollView,
   ActivityIndicator,
 } from "react-native";
+
+// REDUX IMPORT
+import { useSelector } from "react-redux";
+
+// IMPORT COMPONENTS
 import PlanetComponent from "./PlanetComponent";
 
-import { useSelector } from "react-redux";
-// Config
+// CONFIG
 import colors from "../../config/colors";
 
 export default function PlanetsComponent() {
+  // GET THE LOADING STATE FROM GLOBAL STATE WITH REDUX
   const loading = useSelector((state) => state.loader.loading);
 
+  // GET THE ALL PLANETS FROM GLOBAL STATE WITH REDUX
   const planets = useSelector((state) => state.planets.planets[0]);
 
+  // MAP planets VAR TO DISPLAY ALL PLANETS (or loading component if loading == true)
   const Planets = () => {
     if (loading) return <ActivityIndicator />;
-
     return planets.map((planet) => (
       <PlanetComponent planet={planet} key={Math.random()} />
     ));
