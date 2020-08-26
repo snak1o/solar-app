@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import colors from "../config/colors";
-import HomeScreen from "../Screens/HomeScreen";
+import HomeScreen from "../screens/HomeScreen";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { Feather, AntDesign } from "@expo/vector-icons";
 import SoonComponent from "./SoonComponent";
+import PlanetScreen from "../screens/PlanetScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -33,7 +34,7 @@ export default function NavigationComponent() {
         />
         <Tab.Screen
           name="Search"
-          component={SoonComponent}
+          component={PlanetScreen}
           options={{
             tabBarLabel: "Search",
             tabBarIcon: ({ color }) => (
