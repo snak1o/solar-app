@@ -1,8 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import SettingsButtonComponent from "../SettingsButtonComponent";
-
 // CONFIG
 import colors from "../../config/colors";
 
@@ -13,7 +11,6 @@ export default function HomepageAppbarComponent() {
         <Text style={styles.appbar__welcome}>
           Ola, <Text style={styles.appbar__welcome__name}>Nikish Ryazanov</Text>
         </Text>
-        <SettingsButtonComponent />
       </View>
       <Text style={styles.appbar__question}>
         What are you going to learn today?
@@ -23,6 +20,9 @@ export default function HomepageAppbarComponent() {
 }
 
 const styles = StyleSheet.create({
+  contaner: {
+    flex: 1,
+  },
   appbar: {
     marginTop: 50,
     marginBottom: 55,

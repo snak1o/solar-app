@@ -87,7 +87,8 @@ export default function PlanetInfoComponent() {
           </TouchableOpacity>
           <Collapsible collapsed={isCollapsed.physical}>
             <Text style={{ color: colors.background, opacity: 0.65 }}>
-              скоро будет текст
+              скоро будет текстскоро будет текстскоро будет текстскоро будет
+              текстскоро будет текстскоро будет текст
             </Text>
           </Collapsible>
         </View>
@@ -112,7 +113,11 @@ export default function PlanetInfoComponent() {
           </TouchableOpacity>
           <Collapsible collapsed={isCollapsed.geography}>
             <Text style={{ color: colors.background, opacity: 0.65 }}>
-              скоро будет текст
+              скоро будет текстскоро будет текстскоро будет текстскоро будет
+              текстскоро будет текстскоро будет текстскоро будет текстскоро
+              будет текстскоро будет текстскоро будет текстскоро будет
+              текстскоро будет текстскоро будет текстскоро будет текстскоро
+              будет текстскоро будет текстскоро будет текстскоро будет текст
             </Text>
           </Collapsible>
         </View>

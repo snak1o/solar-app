@@ -8,6 +8,7 @@ import SearchComponent from "../components/HomeScreenComponents/SearchComponent"
 import CategoriesComponent from "../components/HomeScreenComponents/CategoriesComponent";
 import PlanetsComponent from "../components/HomeScreenComponents/PlanetsComponent";
 import HomepageAppbarComponent from "../components/HomeScreenComponents/HomepageAppbarComponent";
+import SettingsButtonComponent from "../components/SettingsButtonComponent";
 
 function HomePageComponent() {
   return (
@@ -18,6 +19,7 @@ function HomePageComponent() {
       <View style={styles.container}>
         <View style={styles.main}>
           <HomepageAppbarComponent />
+          <SettingsButtonComponent />
           <SearchComponent />
         </View>
         <ScrollView>
