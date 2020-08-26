@@ -24,7 +24,7 @@ function HomePageComponent() {
           <SettingsButtonComponent />
           <SearchComponent />
         </View>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <CategoriesComponent />
           <PlanetsComponent />
         </ScrollView>

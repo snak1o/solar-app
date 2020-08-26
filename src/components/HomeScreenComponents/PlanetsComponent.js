@@ -34,7 +34,12 @@ export default function PlanetsComponent() {
   return (
     <View style={styles.planets}>
       <Text style={styles.planets__title}>Planets</Text>
-      <ScrollView horizontal={true} style={styles.planets__blocks}>
+      <ScrollView
+        horizontal={true}
+        style={styles.planets__blocks}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+      >
         <Planets />
       </ScrollView>
     </View>

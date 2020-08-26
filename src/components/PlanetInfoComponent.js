@@ -42,7 +42,10 @@ export default function PlanetInfoComponent() {
           </TouchableOpacity>
         </View>
       </View>
-      <ScrollView>
+      <ScrollView
+        showsHorizontalScrollIndicatorw={false}
+        showsVerticalScrollIndicator={false}
+      >
         <Text style={styles.info}>
           Mars is the fourth planet from the Sun, the second smallest in the
           Solar System. Named after the Roman god of war, it is often described
