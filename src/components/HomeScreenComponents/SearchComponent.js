@@ -3,12 +3,12 @@ import { StyleSheet, TextInput, View } from "react-native";
 
 import colors from "../../config/colors";
 
-import { FontAwesome } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 export default function SearchComponent() {
   return (
     <View style={styles.search}>
-      <FontAwesome name="search" size={20} color="white" />
+      <Feather name="search" size={20} color="white" />
       <TextInput
         placeholder="Look for planets, asteroids, stars..."
         placeholderTextColor={colors.white}
