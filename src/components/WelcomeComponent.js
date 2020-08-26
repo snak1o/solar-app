@@ -13,11 +13,11 @@ import { AntDesign } from "@expo/vector-icons";
 
 const { height, width } = Dimensions.get("screen");
 
-export default function WelcomeComponent() {
+export default function WelcomeComponent({ navigation }) {
   return (
     <ImageBackground
       style={styles.background}
-      source={require("../assets/Background.png")}
+      source={require("../../assets/Background.png")}
     >
       <View style={styles.welcome__screen}>
         <View style={styles.welcome__screen__titles}>
@@ -37,7 +37,10 @@ export default function WelcomeComponent() {
             style={{ borderRadius: 8 }}
             end={[1, 0]}
           >
-            <TouchableOpacity style={styles.welcome__screen__continue__button}>
+            <TouchableOpacity
+              onPress={() => navigation.push("Home")}
+              style={styles.welcome__screen__continue__button}
+            >
               <Text style={styles.welcome__screen__continue__button__text}>
                 Start now
               </Text>
@@ -54,6 +57,7 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     resizeMode: "cover",
+    backgroundColor: colors.background,
   },
   welcome__screen: {
     fontFamily: "Roboto",
