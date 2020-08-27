@@ -12,24 +12,40 @@ import PlanetsComponent from "../components/HomeScreenComponents/PlanetsComponen
 import HomepageAppbarComponent from "../components/HomeScreenComponents/HomepageAppbarComponent";
 import SettingsButtonComponent from "../components/SettingsButtonComponent";
 
+// REACT - NAVIGATION IMPORT
+import { createStackNavigator } from "@react-navigation/stack";
+
+// SCREENS IMPORT
+import PlanetScreen from "./PlanetScreen";
+
+// CREATE STACK NAVIGATOR
+const Stack = createStackNavigator();
+
+const ChildComponent = () => (
+  <ImageBackground
+    style={styles.background}
+    source={require("../../assets/MainBackground.png")}
+  >
+    <View style={styles.container}>
+      <View style={styles.main}>
+        <HomepageAppbarComponent />
+        <SettingsButtonComponent />
+        <SearchComponent />
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <CategoriesComponent />
+        <PlanetsComponent />
+      </ScrollView>
+    </View>
+  </ImageBackground>
+);
+
 function HomePageComponent() {
   return (
-    <ImageBackground
-      style={styles.background}
-      source={require("../../assets/MainBackground.png")}
-    >
-      <View style={styles.container}>
-        <View style={styles.main}>
-          <HomepageAppbarComponent />
-          <SettingsButtonComponent />
-          <SearchComponent />
-        </View>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <CategoriesComponent />
-          <PlanetsComponent />
-        </ScrollView>
-      </View>
-    </ImageBackground>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="HomeScreenMain" component={ChildComponent} />
+      <Stack.Screen name="PlanetInfoScreen" component={PlanetScreen} />
+    </Stack.Navigator>
   );
 }
 

@@ -8,10 +8,12 @@ import ip from "../../config/ip";
 
 // ICONS
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
-export default function PlanetComponent({ planet, navigation }) {
+export default function PlanetComponent({ planet }) {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
+    <TouchableOpacity onPress={() => navigation.navigate("PlanetInfoScreen")}>
       <View style={styles.planet__block}>
         <Image
           source={{

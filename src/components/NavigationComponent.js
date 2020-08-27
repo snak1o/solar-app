@@ -46,7 +46,7 @@ export default function NavigationComponent() {
         />
         <Tab.Screen
           name="Search"
-          component={PlanetScreen}
+          component={SoonComponent}
           options={{
             tabBarLabel: "Search",
             tabBarIcon: ({ color }) => (
