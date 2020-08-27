@@ -19,9 +19,9 @@ import { Feather, Ionicons } from "@expo/vector-icons";
 import colors from "../config/colors";
 
 // GET CURRENT SCREEN HEIGHT AND WIDTH
-const { height, width } = Dimensions.get("screen");
+const { height } = Dimensions.get("screen");
 
-export default function PlanetInfoComponent() {
+export default function PlanetInfoComponent({ planet }) {
   // STATE FOR SHOW/HIDE COLLAPSIBLE DROPDOWN (for each dropdown we have one state in obj below)
   const [isCollapsed, setIsCollapsed] = useState({
     introduction: true,
@@ -32,7 +32,7 @@ export default function PlanetInfoComponent() {
   return (
     <View style={styles.information}>
       <View style={styles.header}>
-        <Text style={styles.title}>Mars</Text>
+        <Text style={styles.title}>{planet.name}</Text>
         <View style={styles.actions}>
           <TouchableOpacity style={{ marginRight: 16 }}>
             <Feather name="bookmark" size={24} color={colors.background} />
@@ -46,12 +46,7 @@ export default function PlanetInfoComponent() {
         showsHorizontalScrollIndicatorw={false}
         showsVerticalScrollIndicator={false}
       >
-        <Text style={styles.info}>
-          Mars is the fourth planet from the Sun, the second smallest in the
-          Solar System. Named after the Roman god of war, it is often described
-          as the "Red Planet" because the iron oxide prevalent on its surface
-          gives it a reddish appearance.
-        </Text>
+        <Text style={styles.info}>{planet.description}</Text>
         {/* INTRODUCTION DROPDOWN */}
         <View style={styles.dropdown}>
           <TouchableOpacity
@@ -73,7 +68,7 @@ export default function PlanetInfoComponent() {
           </TouchableOpacity>
           <Collapsible collapsed={isCollapsed.introduction}>
             <Text style={{ color: colors.background, opacity: 0.65 }}>
-              скоро будет текст
+              {planet.description}
             </Text>
           </Collapsible>
         </View>
@@ -98,8 +93,7 @@ export default function PlanetInfoComponent() {
           </TouchableOpacity>
           <Collapsible collapsed={isCollapsed.physical}>
             <Text style={{ color: colors.background, opacity: 0.65 }}>
-              скоро будет текстскоро будет текстскоро будет текстскоро будет
-              текстскоро будет текстскоро будет текст
+              {planet.phys}
             </Text>
           </Collapsible>
         </View>
@@ -124,11 +118,7 @@ export default function PlanetInfoComponent() {
           </TouchableOpacity>
           <Collapsible collapsed={isCollapsed.geography}>
             <Text style={{ color: colors.background, opacity: 0.65 }}>
-              скоро будет текстскоро будет текстскоро будет текстскоро будет
-              текстскоро будет текстскоро будет текстскоро будет текстскоро
-              будет текстскоро будет текстскоро будет текстскоро будет
-              текстскоро будет текстскоро будет текстскоро будет текстскоро
-              будет текстскоро будет текстскоро будет текстскоро будет текст
+              {planet.geo}
             </Text>
           </Collapsible>
         </View>

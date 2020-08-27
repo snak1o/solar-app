@@ -13,7 +13,9 @@ import { useNavigation } from "@react-navigation/native";
 export default function PlanetComponent({ planet }) {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("PlanetInfoScreen")}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("PlanetInfoScreen", { planet })}
+    >
       <View style={styles.planet__block}>
         <Image
           source={{

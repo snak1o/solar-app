@@ -15,14 +15,14 @@ import colors from "../config/colors";
 
 // IMPORT SIMPLE LOADING COMPONENT
 import { ActivityIndicator } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 
 // GET CURRENT SCREEN HEIGHT, WIDTH
 const { height, width } = Dimensions.get("screen");
 
-export default function PlanetScreen() {
+export default function PlanetScreen({ route }) {
   // GET THE LOADING STATE FROM GLOBAL STATE WITH REDUX
   const loading = useSelector((state) => state.loader.loading);
-
   // IF LOADING RETURN LOADING COMPONENT
   return loading ? (
     <ActivityIndicator />
@@ -36,6 +36,7 @@ export default function PlanetScreen() {
         <GoBackArrowComponent />
         <SettingsButtonComponent />
         <View style={styles.planet__image}>
+          {/* TODO: Доделать изменение картинки */}
           <Image
             style={{ height: height * 0.37, width: width * 0.71 }}
             resizeMode="cover"
@@ -44,7 +45,7 @@ export default function PlanetScreen() {
         </View>
       </View>
       <View style={styles.planets}>
-        <PlanetInfoComponent />
+        <PlanetInfoComponent planet={route.params.planet} />
       </View>
     </View>
   );
