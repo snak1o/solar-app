@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 // IMPORT COMPONENTS
 import PlanetInfoComponent from "../components/PlanetInfoComponent";
 import SettingsButtonComponent from "../components/SettingsButtonComponent";
+import GoBackArrowComponent from "../components/GoBackArrowComponent";
 
 // CONFIG
 import colors from "../config/colors";
@@ -32,6 +33,7 @@ export default function PlanetScreen() {
           style={styles.header__background}
           source={require("../../assets/MainBackground.png")}
         />
+        <GoBackArrowComponent />
         <SettingsButtonComponent />
         <View style={styles.planet__image}>
           <Image
