@@ -20,6 +20,7 @@ import colors from "../config/colors";
 
 // ICONS
 import { Feather, AntDesign } from "@expo/vector-icons";
+import SearchScreen from "../screens/SearchScreen";
 
 export default function NavigationComponent() {
   return (
@@ -46,7 +47,7 @@ export default function NavigationComponent() {
         />
         <Tab.Screen
           name="Search"
-          component={SoonComponent}
+          component={SearchScreen}
           options={{
             tabBarLabel: "Search",
             tabBarIcon: ({ color }) => (

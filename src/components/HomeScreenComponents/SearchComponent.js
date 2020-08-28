@@ -8,12 +8,12 @@ import colors from "../../config/colors";
 // ICONS
 import { Feather } from "@expo/vector-icons";
 
-export default function SearchComponent() {
+export default function SearchComponent({ placeholderText }) {
   return (
     <View style={styles.search}>
       <Feather name="search" size={20} color="white" />
       <TextInput
-        placeholder="Look for planets, asteroids, stars..."
+        placeholder={placeholderText}
         placeholderTextColor={colors.white}
         style={{
           marginLeft: 16,

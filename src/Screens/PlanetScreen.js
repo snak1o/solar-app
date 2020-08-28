@@ -65,8 +65,8 @@ const styles = StyleSheet.create({
   },
   planets: {
     width: "100%",
-    paddingLeft: 16,
-    paddingRight: 16,
+    paddingLeft: 20,
+    paddingRight: 20,
     paddingTop: height * 0.085,
   },
   planet__image: {

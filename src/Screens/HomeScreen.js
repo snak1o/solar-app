@@ -30,7 +30,7 @@ const ChildComponent = () => (
       <View style={styles.main}>
         <HomepageAppbarComponent />
         <SettingsButtonComponent />
-        <SearchComponent />
+        <SearchComponent placeholderText="Look for planets, asteroids, stars..." />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <CategoriesComponent />
